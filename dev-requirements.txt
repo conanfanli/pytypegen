@@ -12,6 +12,6 @@ ipdb==0.11
 django==2.1.2
 pyjwt==1.6.4
 isort==4.3.4
-black==18.6.b4
+black==18.9b0
 
 m2r==0.1.15
