@@ -9,7 +9,7 @@ pytest-django==3.4.3
 flake8==3.5.0
 codecov==2.0.15
 ipdb==0.11
-django==2.1.1
+django==2.1.2
 pyjwt==1.6.4
 isort==4.3.4
 black==18.6.b4
