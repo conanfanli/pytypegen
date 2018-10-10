@@ -188,7 +188,7 @@ class RequestResolver:
     def clean_request_data(self) -> None:
         contract_class = self.__class__.__annotations__["data"]
         if issubclass(contract_class, Contract):
-            self.data = contract_class.load_from_dict(self.request.data)
+            self.data = contract_class.load_from_dict(self._data)
         else:
             raise Exception(f"Unknown type for `data` f{contract_class}")
 

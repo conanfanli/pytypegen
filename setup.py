@@ -13,7 +13,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="slotomania",
-    version="0.1.5",
+    version="0.1.6",
     description="Slotomania",
     long_description=long_description,
     scripts=["bin/fix_sloto_stubs.py"],
