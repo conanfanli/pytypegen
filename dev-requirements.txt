@@ -4,7 +4,7 @@ mypy==0.620
 twine==1.11.0
 yapf==0.24.0
 pytest==3.10.0
-pytest-cov==2.6.0
+pytest-cov==2.6.1
 pytest-django==3.4.3
 flake8==3.5.0
 codecov==2.0.15
