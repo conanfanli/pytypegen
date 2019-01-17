@@ -1,6 +1,6 @@
 ipython==7.0.1
 wheel==0.31.1
-mypy==0.620
+mypy==0.660
 twine==1.11.0
 yapf==0.24.0
 pytest==3.10.0
