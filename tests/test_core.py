@@ -34,6 +34,12 @@ class Person(Contract):
 
 
 class DataclassConverterTestCase(TestCase):
+    def test_contract_class_to_dict(self) -> None:
+        assert Person.class_to_dict() == {
+            "name": "Person",
+            "fields": [{"name": "name"}],
+        }
+
     def test_dataclass_converter(self) -> None:
         assert is_dataclass(Person)
         man = Person(
