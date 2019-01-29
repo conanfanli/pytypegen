@@ -25,7 +25,8 @@ import typing
 
 
 class Primitive:
-    pass
+    def to_dict(self):
+        return {"__type__": self.__class__.__name__}
 
 
 class String(Primitive):
@@ -74,4 +75,7 @@ class Shape:
         return Shape(identifier=identifier, fields=fields)
 
     def to_dict(self) -> dict:
-        return {"identifier": self.identifier, "fields": self.fields}
+        return {
+            "identifier": self.identifier,
+            "fields": {name: field.to_dict() for name, field in self.fields.items()},
+        }
