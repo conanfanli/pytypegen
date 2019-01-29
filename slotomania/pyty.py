@@ -59,15 +59,13 @@ class Shape:
         self.fields = fields
 
     @classmethod
-    def load_from_dict(cls, fields: dict) -> "Shape":
+    def load_from_dict(cls, identifier: str, field_args: dict) -> "Shape":
         defined_shapes = {}
-        for field_name, field in fields.items():
-            identifier = None
-            if field_name == "__identifier__":
-                identifier = field
-            elif field_name == "__type__":
+        fields = []
+        for field_name, field in field_args.items():
+            if field_name == "__type__":
                 # Either a primitive or a defined shape
                 field_type = get_primitive_type(field) or defined_shapes[field]
+                fields.append(field_type())
 
-        assert identifier, "Need identifier"
-        return Shape(identifier=identifier)
+        return Shape(identifier=identifier, fields=fields)
