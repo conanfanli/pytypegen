@@ -5,7 +5,7 @@ twine==1.11.0
 yapf==0.24.0
 pytest==3.10.0
 pytest-cov==2.6.0
-pytest-django==3.4.3
+pytest-django==3.4.7
 flake8==3.7.1
 codecov==2.0.15
 ipdb==0.11
