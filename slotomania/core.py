@@ -77,16 +77,6 @@ class Contract:
         return getattr(cls, "__dataclass_fields__")
 
     @classmethod
-    def class_to_dict(cls) -> dict:
-        return {
-            "name": cls.__name__,
-            "fields": [
-                {"name": field_name, "type": field_to_typescript(field)}
-                for field_name, field in cls.get_fields().items()
-            ],
-        }
-
-    @classmethod
     def to_typescript_interface(cls: Type["Contract"]) -> str:
         interface_body = "\n".join(
             [
@@ -239,47 +229,6 @@ TYPE_MAP = {
     Any: "any",
     list: "Array<any>",
 }
-
-
-class FieldTypes(Enum):
-    STRING = auto()
-    BOOLEAN = auto()
-
-
-@dataclass
-class FieldMeta(Contract):
-    field_name: str
-    field_type: FieldTypes
-
-    @classmethod
-    def from_python_type(cls, python_type: type) -> "FieldMeta":
-        field_name = None
-
-        if python_type in TYPE_MAP:
-            field_type = TYPE_MAP[python_type]
-        elif python_type is Undefined:
-            field_type = "undefined"
-        elif is_dataclass(python_type):
-            field_type = python_type.__name__
-
-        if getattr(python_type, "__name__", None) == "NoneType":
-            return "null"
-
-        if getattr(python_type, "__origin__", None) in [list, List]:
-            args = getattr(python_type, "__args__")
-            return "Array<{}>".format(python_type_to_typescript(args[0]))
-
-        if getattr(python_type, "__origin__", None) == Union:
-            args = getattr(python_type, "__args__")
-            return "|".join(python_type_to_typescript(arg) for arg in args)
-
-        if isinstance(python_type, ForwardRef):
-            return python_type.__forward_arg__
-
-        if isinstance(python_type, type) and issubclass(python_type, Enum):
-            return python_type.__name__
-
-        raise UnknowFieldType(f"Unknow type {python_type}")
 
 
 def python_type_to_typescript(python_type: type) -> str:
