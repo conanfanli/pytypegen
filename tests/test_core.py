@@ -67,7 +67,7 @@ export function CreatePerson(requestBody: Person): any {
         }
     }
 
-export const SLOTO_ACTION_CREATORS = { CreatePerson }"""
+export const GENERATED_ACTION_CREATORS = { CreatePerson }"""
         )
 
         assert man == man.load_from_dict(asdict(man))

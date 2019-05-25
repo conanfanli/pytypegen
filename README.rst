@@ -10,20 +10,7 @@
    :alt: pyup
 
 
-pytypegen
-=========
-
-0.0.37 is the last version that supports marshmallow schemas.
-
-A code generator that transforms schemas to Python slot classes and typescript interfaces.
-
-
-.. image:: ./docs/sloto_architecture.png
-   :target: ./docs/sloto_architecture.png
-   :alt: Architecture
-
-
-Examples
+pytypgen
 ========
 
-see `test_contract.py <pytypegen/tests/test_contract.py>`_
+Code generator that converts from Python types (implemented by dataclasses) to TypeScript interfaces
