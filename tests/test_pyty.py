@@ -17,7 +17,7 @@ class PytyTestCase(TestCase):
             identifier="MyShape", fields={"name": String(), "aliases": Array("String")}
         ).to_dict()
 
-        assert actual == expected, actual
+        assert actual == expected
 
     def test_parse_type(self):
         assert parse_type("Array<String>").to_dict() == {"__type__": "Array<String>"}
