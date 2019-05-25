@@ -20,10 +20,9 @@ setup:
 	rm -rf .git/hooks && ln -s $(shell pwd)/git-hooks .git/hooks
 
 .PHONY: publish
-publish:
-	rm -rf build dist
+publish: clean
 	python setup.py sdist
-	twine upload dist/* --config-file .pypirc
+	twine upload dist/* --config-file .pypirc --skip-existing
 
 .PHONY: generate-stubs
 generate-stubs: clean
