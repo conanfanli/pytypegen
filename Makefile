@@ -1,3 +1,8 @@
+.PHONY: clean
+clean:
+	@rm -rf dist pytypegen.egg-info
+	@rm -rf .cover
+	@rm -f .coverage
 
 .PHONY: test
 test:
@@ -19,3 +24,9 @@ publish:
 	rm -rf build dist
 	python setup.py bdist_wheel
 	twine upload dist/* --config-file .pypirc
+
+.PHONY: generate-stubs
+generate-stubs: clean
+	find . -type f -name '*.pyi' | xargs rm
+	stubgen pytypegen/ -o .
+
