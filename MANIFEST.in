@@ -2,8 +2,9 @@ include *requirements.txt
 include *.md
 
 include pytypegen/*.pyi
-recursive-include *.pyi
+recursive-include pytypegen *.pyi
 
 include pytypegen/py.typed
-recursive-include py.typed
+recursive-include pytypegen py.typed
+
 

@@ -21,7 +21,7 @@ setup:
 
 .PHONY: publish
 publish: clean
-	python setup.py sdist
+	python setup.py sdist bdist_wheel
 	twine upload dist/* --config-file .pypirc --skip-existing
 
 .PHONY: generate-stubs
