@@ -22,7 +22,7 @@ setup:
 .PHONY: publish
 publish:
 	rm -rf build dist
-	python setup.py bdist_wheel
+	python setup.py sdist
 	twine upload dist/* --config-file .pypirc
 
 .PHONY: generate-stubs

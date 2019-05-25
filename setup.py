@@ -13,7 +13,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="pytypegen",
-    version="1.0.0",
+    version="1.0.1",
     description="Python type code generator",
     long_description=long_description,
     scripts=["bin/fix_sloto_stubs.py"],
