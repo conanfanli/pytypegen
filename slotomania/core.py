@@ -12,7 +12,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse as DjangoJsonResponse
 from django.views import View
 
-from slotomania.exceptions import BadResolver, MissingField, UnknowFieldType
+from pytypegen.exceptions import BadResolver, MissingField, UnknowFieldType
 
 T = TypeVar("T", bound="Contract")
 

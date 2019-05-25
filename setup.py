@@ -12,12 +12,12 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="slotomania",
-    version="0.1.6",
-    description="Slotomania",
+    name="pytypegen",
+    version="0.1.7",
+    description="Python type code generator",
     long_description=long_description,
     scripts=["bin/fix_sloto_stubs.py"],
-    url="https://github.com/conanfanli/slotomania",
+    url="https://github.com/conanfanli/pytypegen",
     packages=find_packages(exclude=["*.tests.*"]),
     install_requires=["yapf>=0.21"],
     python_requires="~=3.6",
@@ -25,10 +25,9 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
-    keywords="slotomania",
+    keywords="Python,Types,Dataclass,Code Generation",
     author="Conan Li",
     author_email="conanlics@gmail.com",
     license="MIT",

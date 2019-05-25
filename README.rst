@@ -1,17 +1,17 @@
 
 
-.. image:: https://codecov.io/gh/conanfanli/slotomania/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/conanfanli/slotomania
+.. image:: https://codecov.io/gh/conanfanli/pytypegen/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/conanfanli/pytypegen
    :alt: codecov
 
 
-.. image:: https://pyup.io/repos/github/conanfanli/slotomania/shield.svg
-   :target: https://pyup.io/repos/github/conanfanli/slotomania/shield.svg
+.. image:: https://pyup.io/repos/github/conanfanli/pytypegen/shield.svg
+   :target: https://pyup.io/repos/github/conanfanli/pytypegen/shield.svg
    :alt: pyup
 
 
-Slotomania
-==========
+pytypegen
+=========
 
 0.0.37 is the last version that supports marshmallow schemas.
 
@@ -26,4 +26,4 @@ A code generator that transforms schemas to Python slot classes and typescript i
 Examples
 ========
 
-see `test_contract.py <slotomania/tests/test_contract.py>`_
+see `test_contract.py <pytypegen/tests/test_contract.py>`_

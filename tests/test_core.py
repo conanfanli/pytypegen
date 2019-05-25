@@ -4,8 +4,8 @@ from enum import Enum
 from typing import List, Optional
 from unittest import TestCase
 
-from slotomania.contrib.contracts import AuthenticateUserRequest
-from slotomania.core import (
+from pytypegen.contrib.contracts import AuthenticateUserRequest
+from pytypegen.core import (
     Contract,
     EntityTypes,
     Instruction,

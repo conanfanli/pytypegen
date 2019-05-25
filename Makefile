@@ -18,4 +18,4 @@ setup:
 publish:
 	rm -rf build dist
 	python setup.py bdist_wheel
-	twine upload dist/*
+	twine upload dist/* --config-file .pypirc

@@ -6,9 +6,9 @@ from django.conf import settings
 from django.contrib.auth import authenticate, get_user_model, login
 import jwt
 
-from slotomania.contrib.contracts import AuthenticateUserRequest
-from slotomania.core import EntityTypes, Instruction, Operation, RequestResolver
-from slotomania.exceptions import NotAuthenticated
+from pytypegen.contrib.contracts import AuthenticateUserRequest
+from pytypegen.core import EntityTypes, Instruction, Operation, RequestResolver
+from pytypegen.exceptions import NotAuthenticated
 
 
 def authenticate_request(request) -> None:

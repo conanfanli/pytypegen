@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from slotomania.pyty import Array, Shape, String, parse_type
+from pytypegen.pyty import Array, Shape, String, parse_type
 
 
 class PytyTestCase(TestCase):
