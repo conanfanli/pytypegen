@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from slotomania.exceptions import MissingField, NotAuthenticated
+from pytypegen.exceptions import MissingField, NotAuthenticated
 
 
 class LoginTestCase(TestCase):

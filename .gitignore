@@ -8,3 +8,4 @@ build/
 .cover/
 coverage.xml
 test-reports/
+.DS_Store

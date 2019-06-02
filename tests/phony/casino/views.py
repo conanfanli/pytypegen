@@ -5,11 +5,11 @@ from enum import Enum
 
 from django.http import HttpResponse
 
-from slotomania.contrib import contracts
-from slotomania.contrib.jwt_auth import AuthenticateUser
-from slotomania.core import Contract, Instruction
-from slotomania.core import InstructorView as BaseView
-from slotomania.core import Operation, RequestResolver
+from pytypegen.contrib import contracts
+from pytypegen.contrib.jwt_auth import AuthenticateUser
+from pytypegen.core import Contract, Instruction
+from pytypegen.core import InstructorView as BaseView
+from pytypegen.core import Operation, RequestResolver
 
 
 @dataclass

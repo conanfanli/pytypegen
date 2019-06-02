@@ -4,8 +4,8 @@ from enum import Enum
 from typing import List, Optional
 from unittest import TestCase
 
-from slotomania.contrib.contracts import AuthenticateUserRequest
-from slotomania.core import (
+from pytypegen.contrib.contracts import AuthenticateUserRequest
+from pytypegen.core import (
     Contract,
     EntityTypes,
     Instruction,
@@ -67,7 +67,7 @@ export function CreatePerson(requestBody: Person): any {
         }
     }
 
-export const SLOTO_ACTION_CREATORS = { CreatePerson }"""
+export const GENERATED_ACTION_CREATORS = { CreatePerson }"""
         )
 
         assert man == man.load_from_dict(asdict(man))

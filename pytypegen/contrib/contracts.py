@@ -1,6 +1,5 @@
 from dataclasses import dataclass
-
-from slotomania.core import Contract
+from pytypegen.core import Contract
 
 
 @dataclass

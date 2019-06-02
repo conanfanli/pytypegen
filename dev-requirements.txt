@@ -1,12 +1,12 @@
 ipython==7.0.1
 wheel==0.31.1
-mypy==0.660
+mypy==0.701
 twine==1.11.0
 yapf==0.24.0
 pytest==3.10.0
 pytest-cov==2.6.0
 pytest-django==3.4.3
-flake8==3.7.1
+flake8==3.7.7
 codecov==2.0.15
 ipdb==0.11
 django==2.1.2

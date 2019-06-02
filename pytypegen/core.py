@@ -12,7 +12,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse as DjangoJsonResponse
 from django.views import View
 
-from slotomania.exceptions import BadResolver, MissingField, UnknowFieldType
+from pytypegen.exceptions import BadResolver, MissingField, UnknowFieldType
 
 T = TypeVar("T", bound="Contract")
 
@@ -328,6 +328,6 @@ def contracts_to_typescript(
             "\n\n".join(action.to_typescript_function() for action in redux_actions)
         )
         names = ",\n".join([action.name for action in redux_actions])
-        blocks.append(f"""export const SLOTO_ACTION_CREATORS = {{ {names} }}""")
+        blocks.append(f"""export const GENERATED_ACTION_CREATORS = {{ {names} }}""")
 
     return "\n\n".join(blocks)

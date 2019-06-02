@@ -1,3 +1,8 @@
+.PHONY: clean
+clean:
+	@rm -rf dist pytypegen.egg-info
+	@rm -rf .cover
+	@rm -f .coverage
 
 .PHONY: test
 test:
@@ -15,7 +20,12 @@ setup:
 	rm -rf .git/hooks && ln -s $(shell pwd)/git-hooks .git/hooks
 
 .PHONY: publish
-publish:
-	rm -rf build dist
-	python setup.py bdist_wheel
-	twine upload dist/*
+publish: clean
+	python setup.py sdist bdist_wheel
+	twine upload dist/* --config-file .pypirc --skip-existing
+
+.PHONY: generate-stubs
+generate-stubs: clean
+	find . -type f -name '*.pyi' | xargs rm
+	stubgen pytypegen/ -o .
+
