@@ -14,7 +14,7 @@ class PytyTestCase(TestCase):
             },
         ).to_dict()
         expected = Shape(
-            identifier="MyShape", fields={"name": String(), "aliases": Array("String")}
+            identifier="MyShape", fields={"name": String(), "aliases": Array("string")}
         ).to_dict()
 
         assert actual == expected
