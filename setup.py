@@ -13,7 +13,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="pytypegen",
-    version="1.0.3",
+    version="1.0.4",
     description="Python type code generator",
     long_description=long_description,
     url="https://github.com/conanfanli/pytypegen",
