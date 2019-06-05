@@ -1,17 +1,17 @@
+dist: xenial
 language: python
 sudo: required
 python:
-    - 3.6.6
-service:
-    docker
+    - 3.7
 
 before_install:
     - docker build -t sloto .
     - pip install codecov
+install:
+  - pip install -r dev-requirements.txt
 
 script:
-    - docker run --name sloto-container sloto make coverage
-    - docker cp sloto-container:/code/.coverage .
-    - docker cp sloto-container:/code/coverage.xml .
+    - mypy .
+    - make coverage
     - codecov
 

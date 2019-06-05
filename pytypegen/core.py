@@ -306,7 +306,6 @@ def contracts_to_typescript(
     *,
     dataclasses: List[Union[Type[Contract], Type[Enum]]],
     redux_actions: List[ReduxAction],
-    import_plugins: bool = True,
 ) -> str:
     """
     Args:
@@ -315,7 +314,7 @@ def contracts_to_typescript(
         redux_actions: A list of ReduxAction to be converted to typescript
     creators.
     """
-    blocks = import_plugins and ['import * as plugins from "./plugins"'] or []
+    blocks = []
     for index, contract in enumerate(dataclasses):
         if issubclass(contract, Contract):
             blocks.append(contract.to_typescript_interface())
