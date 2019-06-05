@@ -57,6 +57,10 @@ Usage
 
    print(contracts_to_typescript(dataclasses=[Gender, Person]))
 
+Will generate the following TypeScript code:
+
+.. code-block:: TypeScript
+
    export enum Gender {
      male = 'male',
      female = 'female'

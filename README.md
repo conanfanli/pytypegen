@@ -34,7 +34,9 @@ class Person(Contract):
     addresses: Optional[List[Address]] = None
 
 print(contracts_to_typescript(dataclasses=[Gender, Person]))
-
+```
+Will generate the following TypeScript code:
+```TypeScript
 export enum Gender {
   male = 'male',
   female = 'female'
