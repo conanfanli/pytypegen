@@ -1,5 +1,10 @@
 
 
+.. image:: https://travis-ci.org/conanfanli/pytypegen.svg?branch=master
+   :target: https://travis-ci.org/conanfanli/pytypegen
+   :alt: Build Status
+
+
 .. image:: https://codecov.io/gh/conanfanli/pytypegen/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/conanfanli/pytypegen
    :alt: codecov
@@ -25,6 +30,44 @@ Install
 =======
 
 ``pip install pytypegen``
+
+Usage
+=====
+
+.. code-block:: python
+
+   from pytypgen.core import contracts_to_typescript, Contract
+
+   class Gender(Enum):
+       male = 1
+       female = 2
+
+
+   @dataclass
+   class Address(Contract):
+       street: str
+
+
+   @dataclass
+   class Person(Contract):
+       name: str
+       gender: Gender
+       birth_date: datetime.datetime
+       addresses: Optional[List[Address]] = None
+
+   print(contracts_to_typescript(dataclasses=[Gender, Person]))
+
+   export enum Gender {
+     male = 'male',
+     female = 'female'
+   }
+
+   export interface Person {
+     name: string
+     gender: Gender
+     birth_date: string
+     addresses?: Array<Address>|null
+   }
 
 Development Setup
 =================
