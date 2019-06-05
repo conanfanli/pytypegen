@@ -39,7 +39,7 @@ class Primitive(FieldType):
 
 
 class Composite(FieldType):
-    def to_dict(self):
+    def to_dict(self) -> dict:
         raise NotImplementedError()
 
 

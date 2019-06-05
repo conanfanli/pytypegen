@@ -45,7 +45,6 @@ class DataclassConverterTestCase(TestCase):
             contracts_to_typescript(
                 dataclasses=[Gender, Person],
                 redux_actions=[ReduxAction(name="CreatePerson", contract=Person)],
-                import_plugins=False,
             )
             == """export enum Gender {
   male = 'male',
