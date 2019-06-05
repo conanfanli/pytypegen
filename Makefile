@@ -28,4 +28,5 @@ publish: clean
 generate-stubs: clean
 	find . -type f -name '*.pyi' | xargs rm
 	stubgen pytypegen/ -o .
+	find . -type f -name '*.pyi' | xargs bin/fix_sloto_stubs.py
 
