@@ -106,7 +106,6 @@ class Contract:
                 # TODO: natively chose first type in Union
                 return convert_value(value, args[0])
             elif value_type.__origin__ == list:
-                # e.g. List[OtherSloto]
                 nested_type = value_type.__args__[0]
                 return [convert_value(item, nested_type) for item in value]
             else:
