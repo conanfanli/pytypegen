@@ -302,31 +302,18 @@ def enum_to_typescript(enum_class: Type[Enum]) -> str:
     return "export enum {} {{\n{}\n}}".format(enum_class.__name__, body)
 
 
-def contracts_to_typescript(
-    *,
-    dataclasses: List[Union[Type[Contract], Type[Enum]]],
-    redux_actions: List[ReduxAction],
-) -> str:
+def contracts_to_typescript(contracts: List[Union[Type[Contract], Type[Enum]]]) -> str:
     """
     Args:
-        interface_schemas: A list of schemas to be converted to typescript
+        contracts: A list of Contract sub classes to be converted to typescript
     interfaces.
-        redux_actions: A list of ReduxAction to be converted to typescript
-    creators.
     """
     blocks = []
-    for index, contract in enumerate(dataclasses):
+    for index, contract in enumerate(contracts):
         if issubclass(contract, Contract):
             blocks.append(contract.to_typescript_interface())
         else:
             assert issubclass(contract, Enum)
             blocks.append(enum_to_typescript(contract))
-
-    if redux_actions:
-        blocks.append(
-            "\n\n".join(action.to_typescript_function() for action in redux_actions)
-        )
-        names = ",\n".join([action.name for action in redux_actions])
-        blocks.append(f"""export const GENERATED_ACTION_CREATORS = {{ {names} }}""")
 
     return "\n\n".join(blocks)

@@ -42,10 +42,7 @@ class DataclassConverterTestCase(TestCase):
         woman = Person("Girl", Gender.female, datetime.datetime.utcnow())
         assert is_dataclass(man) and is_dataclass(woman)
         assert (
-            contracts_to_typescript(
-                dataclasses=[Gender, Person],
-                redux_actions=[ReduxAction(name="CreatePerson", contract=Person)],
-            )
+            contracts_to_typescript(contracts=[Gender, Person])
             == """export enum Gender {
   male = 'male',
   female = 'female'
@@ -56,17 +53,7 @@ export interface Person {
   gender: Gender
   birth_date: string
   addresses?: Array<Address>|null
-}
-
-export function CreatePerson(requestBody: Person): any {
-        return (dispatch) => {
-            return dispatch(
-                plugins.callEndpoint("CreatePerson", requestBody, )
-            )
-        }
-    }
-
-export const GENERATED_ACTION_CREATORS = { CreatePerson }"""
+}"""
         )
 
         assert man == man.load_from_dict(asdict(man))
