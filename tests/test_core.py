@@ -42,10 +42,14 @@ class DataclassConverterTestCase(TestCase):
         woman = Person("Girl", Gender.female, datetime.datetime.utcnow())
         assert is_dataclass(man) and is_dataclass(woman)
         assert (
-            contracts_to_typescript(contracts=[Gender, Person])
+            contracts_to_typescript(contracts=[Gender, Address, Person])
             == """export enum Gender {
   male = 'male',
   female = 'female'
+}
+
+export interface Address {
+  street: string
 }
 
 export interface Person {

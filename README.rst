@@ -55,7 +55,7 @@ Usage
        birth_date: datetime.datetime
        addresses: Optional[List[Address]] = None
 
-   print(contracts_to_typescript(dataclasses=[Gender, Person]))
+   print(contracts_to_typescript(dataclasses=[Gender, Address, Person]))
 
 Will generate the following TypeScript code:
 
@@ -64,6 +64,10 @@ Will generate the following TypeScript code:
    export enum Gender {
      male = 'male',
      female = 'female'
+   }
+
+   export interface Address {
+     street: string
    }
 
    export interface Person {
